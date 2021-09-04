@@ -1,13 +1,15 @@
 const express = require('express')
 const cors = require('cors');
 const app = express();
-app.use(cors());
 const bodyParser = require('body-parser')
 const json2csv = require('json2csv').parse;
 const PORT = process.env.PORT || 3001;
 const CSVToJSON = require('csvtojson');
 const url = require('url');
 const fs = require('fs');
+
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'build')));
 
 let dupes = [];
 
@@ -110,6 +112,10 @@ function tsvJSON(tsv) {
     })
     return (JSON.stringify(result))
 }
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 //get_tree
 app.get('/get_tree', (req, res) => {
