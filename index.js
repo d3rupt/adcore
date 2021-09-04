@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3001;
 const CSVToJSON = require('csvtojson');
 const url = require('url');
 const fs = require('fs');
+const path = require('path');
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
@@ -113,7 +114,7 @@ function tsvJSON(tsv) {
     return (JSON.stringify(result))
 }
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
