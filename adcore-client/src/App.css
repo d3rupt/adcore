@@ -1,0 +1,74 @@
+.App {
+    position: relative;
+    min-height: 100vh;
+    pasdding: 5rem 0;
+    flex-direction: column;
+    background: url("./images/background.png"), #333;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    align-items: flex-start;
+    padding-left: 5vh;
+}
+
+.data-accordion {
+    min-width: 25rem;
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.75);
+    flex-direction: column;
+    align-items: flex-start;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.4));
+}
+
+.accordion-title {
+    width: 100%;
+    justify-content: flex-start;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.75);
+}
+
+.accordion-title > * {
+    padding-left: 1rem;
+}
+
+
+.acc-dataContainer {
+    /*max-height: 0;
+    overflow: hidden;*/
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    transition: max-height 0.25s;
+}
+
+.acc-data {
+    padding: 0.5rem 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.acc-data > input {
+    width: 75%;
+    height: 2rem;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.25);
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+}
+
+.acc-data > input::placeholder {
+    color: #333;
+}
+
+
+.acc-data  > * {
+    margin: 1rem;
+}
+
+.button {
+    border: 1px solid #333;
+    padding: 0 0.25rem;
+    background: rgba(0,0,0.25);
+    cursor: pointer;
+}
